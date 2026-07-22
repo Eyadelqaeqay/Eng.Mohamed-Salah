@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohamed Salah — Network & Systems Engineer, Original Trade">
+    <meta id="ctl00_cpSEO_AllMeta_SEO_All_m_metakeywords" name="keywords" content="مهندس شبكات, نظم معلومات, Original Trade, العاشر من رمضان">
+    <meta id="ctl00_cpSEO_AllMeta_SEO_All_m_metadesc" name="description" content="تقدم شركة Original Trade حلولاً تقنية متكاملة، بما في ذلك تصميم بنية الشبكات، إدارة الخوادم، خدمات الدعم الفني، وتكامل الأنظمة. نعمل معكم لإیجاد النظام الذي یناسب إحتیاجاتکم وذلك وفقاً للمعاییر الدولیة. كمدير للشركة ومهندس معتمد، أضمن أعلى مستويات الكفاءة التقنية ونسعى لتقدیم خدماتنا ﻓﻲ مدينة العاشر من رمضان وجميع أنحاء الجمهورية.">
+    <title>Mohamed Salah - Network & Systems Engineer, Original Trade</title>
+
+    <link rel="icon" type="image/png" href="assets/0.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Theme variables (fire‑extinguisher inspired).  
+           We define a set of custom properties for both light and dark modes. The dark values live in
+           a `.dark` context on `body`. A few additional variables (like --nav-bg) are used to
+           maintain consistent backgrounds on fixed elements such as the navigation bar. */
+        :root{
+            --fe-red:#c62828; /* main extinguisher red */
+            --fe-red-2:#d32f2f;
+            --fe-accent:#ff7043;
+            /* Light theme colours */
+            --bg:#ffffff;
+            --card:#ffffff;
+            --muted:#6b7280;
+            --text:#1f2937;
+            --nav-bg: rgba(255,255,255,0.95);
+            --glass:rgba(255,255,255,0.06);
+            --shadow:0 8px 30px rgba(11,22,34,0.08);
+            --radius:14px;
+            --transition:all .28s cubic-bezier(.2,.9,.3,1);
+        }
+
+        /* Dark theme overrides. When the `dark` class is applied to the body this block
+           redefines the variables above to suitable alternatives for a night‑time experience. */
+        body.dark{
+            --bg:#071022;
+            --card:#0f172a;
+            --muted:#94a3b8;
+            --text:#f1f5f9;
+            --nav-bg: rgba(7,16,34,0.9);
+            --glass:rgba(255,255,255,0.05);
+            --shadow:0 12px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Arabic-friendly typography when lang=ar */
+        html[lang="ar"] body{font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+        html:not([lang="ar"]) body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:var(--text);line-height:1.6}
+
+        /* Layout basics */
+        nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);
+            width:calc(100% - 48px);max-width:1200px;
+            /* Use variable for nav background so that it adapts between light and dark themes. We apply
+               a subtle blur to create a frosted glass effect and a thin border for definition. */
+            background:var(--nav-bg);
+            backdrop-filter:blur(12px);
+            border-radius:12px;
+            padding:10px 18px;
+            display:flex;align-items:center;justify-content:space-between;
+            box-shadow:var(--shadow);
+            border:1px solid rgba(255,255,255,0.1);
+            z-index:999}
+        .nav-left{display:flex;align-items:center;gap:14px}
+        .logo-wrap{display:flex;align-items:center;gap:12px}
+        .logo-sigil{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--fe-red),var(--fe-red-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;box-shadow:0 6px 18px rgba(198,40,40,0.18)}
+        .logo-text{font-weight:700;color:var(--fe-red-2);letter-spacing:.4px}
+        .nav-menu{display:flex;gap:18px;align-items:center}
+        .nav-menu a{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:10px}
+        .nav-menu a:hover{background:var(--glass)}
+
+        .controls{display:flex;align-items:center;gap:10px}
+        .toggle-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:6px 10px;border-radius:8px;cursor:pointer}
+
+        /* Hide mobile-only elements by default */
+        .mobile-only{display:none;}
+
+        /* Hero with extinguisher silhouette accent */
+        #hero{
+            min-height:88vh;
+            display:grid;place-items:center;
+            padding:80px 24px 40px;
+            /* A subtle gradient using the fire‑red hue on top that fades into the page background.  
+               For dark mode the gradient intensifies slightly to stand out against the darker backdrop. */
+            background:linear-gradient(180deg, rgba(214,63,63,0.06), transparent);
+            position:relative;
+            overflow:hidden;
+        }
+        body.dark #hero{
+            background:linear-gradient(180deg, rgba(198,40,40,0.2), transparent);
+        }
+        .hero-card{max-width:1200px;width:100%;
+            /* Card inherits from the --card variable. We avoid baked‑in white gradients to better support dark mode */
+            background:var(--card);
+            border-radius:18px;padding:36px;
+            display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;
+            box-shadow:var(--shadow);
+            border:1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Extinguisher decorative SVG placed behind content */
+        .extinguisher-art{position:absolute;right:24px;top:20px;opacity:0.08;width:420px;height:420px;pointer-events:none}
+
+        .hero-left h1{font-size:2.6rem;margin:0 0 10px;color:var(--fe-red-2)}
+        .hero-left .subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:12px}
+        .hero-left p{color:var(--text);margin-bottom:18px}
+        .hero-ctas{display:flex;gap:12px}
+        .btn{padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+        .btn-primary{background:var(--fe-red);color:white;box-shadow:0 10px 30px rgba(198,40,40,0.12)}
+        .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+
+        /* inputs and toggle buttons adapt their border and background colours in dark mode */
+        body.dark input,
+        body.dark textarea,
+        body.dark select,
+        body.dark .toggle-btn{
+            border-color:rgba(255,255,255,0.15) !important;
+            background:var(--card);
+            color:var(--text);
+        }
+        body.dark input::placeholder,
+        body.dark textarea::placeholder{color:var(--muted);}
+
+        /* right column: image placeholders */
+        .hero-right{display:flex;flex-direction:column;gap:12px;align-items:center}
+        .hero-photo{width:360px;height:360px;border-radius:12px;background:linear-gradient(135deg,var(--fe-red),var(--fe-accent));display:flex;align-items:center;justify-content:center;color:white;font-size:48px}
+        .hero-photo.small{width:160px;height:120px;border-radius:10px}
+        /* Ensure the hero image scales responsively on smaller screens.  Without this rule the fixed
+           width specified on the <img> element can cause overflow when the layout stacks into a single
+           column.  By constraining the image to the available width and preserving its aspect ratio we
+           avoid horizontal scrolling or clipping on devices around 450px wide. */
+        .hero-right img{
+            max-width:100%;
+            height:auto;
+            display:block;
+            margin:0 auto;
+        }
+
+        /* sections */
+        section{padding:72px 20px}
+        .container{max-width:1100px;margin:0 auto}
+        .section-title{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+        .section-title h2{color:var(--fe-red-2);margin:0}
+        .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow)}
+
+        /* services grid with extinguisher cap icons */
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+        .service-card{
+            padding:18px;
+            border-radius:12px;
+            background:var(--card);
+            border:1px solid rgba(255,255,255,0.05);
+            box-shadow:var(--shadow);
+            transition:transform .35s var(--transition), box-shadow .35s var(--transition);
+        }
+        .service-card:hover{
+            transform:translateY(-6px) scale(1.02);
+            box-shadow:0 20px 40px rgba(0,0,0,0.3);
+        }
+        .service-icon{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--fe-red),var(--fe-accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;margin-bottom:10px}
+
+        /* RTL adjustments */
+        html[lang="ar"]{direction:rtl}
+        html[lang="ar"] .nav-container, html[lang="ar"] nav{direction:rtl}
+        html[lang="ar"] .hero-card{grid-template-columns:420px 1fr}
+
+        /* responsive */
+        @media (max-width:980px){
+            .hero-card{grid-template-columns:1fr;}
+            .hero-right{order:-1}
+            .services-grid{grid-template-columns:repeat(2,1fr)}
+        }
+
+        @media (max-width:500px){
+            /* Adjust navigation layout on small screens. Hide the full nav links and show a menu toggle. */
+            nav{
+                /* On very small screens the nav spans the full width with small horizontal margins. */
+                left:12px;
+                right:12px;
+                transform:none;
+                width:auto;
+                max-width:calc(100% - 24px);
+                padding:10px 14px;
+            }
+        
+            /* Show mobile-only elements like the menu toggle */
+            .mobile-only{display:block;}
+            /* Hide nav menu by default on small screens */
+            .nav-menu{display:none;}
+            /* When menu is opened via JS toggling, display it as a vertical dropdown */
+            .nav-menu.open{
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+                margin-top:10px;
+                background:var(--card);
+                padding:12px;
+                border-radius:12px;
+                box-shadow:var(--shadow);
+                position:absolute;
+                top:100%;
+                right:0;
+                left:0;
+                z-index:998;
+            }
+            .services-grid{grid-template-columns:1fr}
+            .hero-left h1{font-size:1.9rem}
+
+            /* Hide the brand text on very small screens to save horizontal space */
+            .logo-text{display:none;}
+            /* Ensure no horizontal scrolling occurs on mobile */
+            body{overflow-x:hidden;}
+            /* Stack the contact card columns on mobile for better readability */
+            .contact-card{grid-template-columns:1fr !important;}
+        }
+
+        /* Override hero layout for Arabic on tablet and mobile to prevent overlapping columns */
+        @media (max-width:980px){
+            html[lang="ar"] .hero-card{
+                grid-template-columns:1fr;
+            }
+        }
+
+        /* Further tweaks for very small screens to improve readability */
+        @media (max-width:600px){
+            .hero-card{
+                grid-template-columns:1fr;
+                padding:24px;
+                text-align:center;
+            }
+            .hero-left, .hero-right{
+                text-align:center;
+            }
+            .hero-ctas{
+                justify-content:center;
+                flex-wrap:wrap;
+            }
+        }
+
+        /* Custom styles for new sections */
+        /* Certifications section */
+        .certifications-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+        }
+        .cert-card{
+            background:linear-gradient(135deg,#173b6c,#2a519d);
+            border-radius:12px;
+            padding:24px;
+            color:#fff;
+            text-align:center;
+            box-shadow:var(--shadow);
+        }
+        .cert-card h3{margin:12px 0 8px;font-size:1.3rem;}
+        .cert-card p{color:rgba(255,255,255,0.8);font-size:0.95rem;margin:0;}
+
+        /* Professional services grid */
+        .prof-services-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:18px;
+        }
+        .prof-service-card{
+            background:var(--card);
+            border-radius:12px;
+            box-shadow:var(--shadow);
+            padding:20px;
+            text-align:center;
+            border:1px solid rgba(255,255,255,0.05);
+        }
+        .prof-service-icon{
+            width:64px;height:64px;
+            border-radius:50%;
+            background:linear-gradient(135deg,var(--fe-red),var(--fe-accent));
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:32px;
+            margin:0 auto 10px;
+        }
+        .prof-service-card h3{margin:8px 0;}
+        .prof-service-card p{font-size:0.9rem;color:var(--muted);margin:0;}
+
+        /* Competencies section */
+        .competencies-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:18px;
+        }
+        .comp-card{
+            background:var(--card);
+            border-radius:12px;
+            box-shadow:var(--shadow);
+            padding:20px;
+            display:flex;
+            gap:14px;
+            align-items:flex-start;
+        }
+        .comp-card .comp-icon{
+            width:40px;height:40px;
+            border-radius:50%;
+            background:linear-gradient(135deg,var(--fe-red),var(--fe-accent));
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:24px;
+        }
+        .comp-card .comp-content h4{margin:0 0 4px;font-weight:700;font-size:1rem;}
+        .comp-card .comp-content p{margin:0;font-size:0.9rem;color:var(--muted);}
+
+        /* Testimonials section */
+        .testimonial-card{
+            background:var(--card);
+            border-radius:12px;
+            box-shadow:var(--shadow);
+            padding:24px;
+            position:relative;
+            line-height:1.5;
+        }
+        .testimonial-card .stars{
+            color:var(--fe-accent);
+            font-size:1.2rem;
+            margin-bottom:8px;
+        }
+        .testimonial-card .author{
+            margin-top:12px;
+            font-weight:700;
+        }
+        .testimonial-card .role{
+            color:var(--muted);
+            font-size:0.9rem;
+        }
+
+        /* Safety compliance section */
+        .safety-section{margin-top:30px;}
+        .safety-section ul{list-style:none;padding:0;margin:0;}
+        .safety-section li{
+            display:flex;
+            gap:8px;
+            align-items:flex-start;
+            padding-left:0;
+            margin-bottom:8px;
+        }
+        .safety-section li::before{
+            content:'✔';
+            position:relative;
+            left:0;
+            top:0;
+            color:var(--fe-red-2);
+            font-size:1rem;
+            line-height:1.2;
+        }
+        .safety-section li p{
+            margin:0;
+            font-size:0.9rem;
+            color:var(--muted);
+        }
+
+        /* Gallery section */
+        /* Project gallery uses a responsive grid.  Rather than fixing the row height we
+           leverage the CSS `aspect-ratio` property to maintain consistent proportions for
+           every thumbnail, regardless of the original image dimensions.  Each item will
+           auto‑fit into the available space while preserving a 4:3 aspect ratio. */
+        .gallery-grid{
+            display:grid;
+            /* Use exactly three equal columns on large screens to ensure a balanced layout.
+               Media queries below will adapt the column count on smaller devices. */
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+        }
+        .gallery-grid img{
+            width:100%;
+            /* Maintain a 4:3 aspect ratio for all thumbnails; use object-fit to crop
+               oversized images while centering important content. */
+            aspect-ratio:4/3;
+            object-fit:cover;
+            object-position:center;
+            border-radius:12px;
+            box-shadow:var(--shadow);
+        }
+
+        /* Responsive adjustments for new sections */
+        @media (max-width:980px){
+            .certifications-grid{grid-template-columns:repeat(2,1fr);}
+            .prof-services-grid{grid-template-columns:1fr;}
+            .competencies-grid{grid-template-columns:1fr;}
+            .gallery-grid{grid-template-columns:1fr 1fr;}
+        }
+        @media (max-width:600px){
+            .certifications-grid{grid-template-columns:1fr;}
+            .gallery-grid{grid-template-columns:1fr;}
+            .comp-card{flex-direction:column;align-items:center;text-align:center;}
+            .comp-card .comp-icon{margin-bottom:8px;}
+        }
+
+        /* minor animations */
+        .fade-up{transform:translateY(10px);opacity:0;animation:fadeUp .6s forwards}
+        @keyframes fadeUp{to{transform:none;opacity:1}}
+
+        /* Decorative floating sparks to give the hero section a sense of life.  
+           Each spark travels upward and slowly fades out; multiple elements with different
+           durations and delays are used to create variety. */
+        .sparks{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+        .sparks span{
+            position:absolute;
+            bottom:-40px;
+            width:6px;height:6px;
+            background:var(--fe-accent);
+            border-radius:50%;
+            opacity:0.8;
+            animation:sparkFloat var(--dur) linear infinite;
+            left:var(--left);
+            animation-delay:var(--delay);
+            filter:blur(0.5px);
+        }
+        @keyframes sparkFloat{
+            from{transform:translateY(0) scale(1);opacity:0.8}
+            to{transform:translateY(-120vh) scale(1.3);opacity:0}
+        }
+        /* screen-reader only utility class */
+        .sr-only{
+            position:absolute;
+            width:1px;
+            height:1px;
+            padding:0;
+            margin:-1px;
+            overflow:hidden;
+            clip:rect(0,0,0,0);
+            white-space:nowrap;
+            border:0;
+        }
+        /* simple vertical timeline styling */
+        .timeline{
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+        .timeline li{
+            position:relative;
+            padding-left:20px;
+            margin-bottom:18px;
+        }
+        .timeline li::before{
+            content:'';
+            position:absolute;
+            left:0;
+            top:6px;
+            width:6px;
+            height:6px;
+            background:var(--fe-red-2);
+            border-radius:50%;
+        }
+        .timeline li strong{
+            display:block;
+            font-weight:700;
+            color:var(--fe-red-2);
+        }
+        .timeline li span{
+            font-size:0.9rem;
+            color:var(--muted);
+        }
+        .timeline li p{
+            margin:4px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav aria-label="Main Navigation">
+    <div class="nav-left">
+        <div class="logo-wrap">
+            <img src="assets/0.png" width="32" height="32">
+            <div class="logo-text" data-i18n="brand.name">Mohamed Salah</div>
+        </div>
+        <div class="nav-menu" role="menubar">
+            <a href="#hero" role="menuitem" data-i18n="nav.home">الرئيسية</a>
+            <a href="#about" role="menuitem" data-i18n="nav.about">عني</a>
+            <a href="#experience" role="menuitem" data-i18n="nav.experience">الخبرة</a>
+            <a href="#services" role="menuitem" data-i18n="nav.services">الخدمات</a>
+            <a href="#portfolio" role="menuitem" data-i18n="nav.portfolio">الأعمال</a>
+            <a href="#contact" role="menuitem" data-i18n="nav.contact">اتصل بنا</a>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="menuToggle" class="toggle-btn mobile-only" aria-label="Toggle menu">☰</button>
+        <button id="langToggle" class="toggle-btn" aria-pressed="true" aria-label="Toggle language">العربية</button>
+        <button id="themeToggle" class="toggle-btn" aria-pressed="false" aria-label="Toggle theme">☀️</button>
+    </div>
+</nav>
+
+<section id="hero" aria-labelledby="hero-heading">
+    <div class="extinguisher-art" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="420" height="420" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+                <rect x="48" y="24" width="48" height="120" rx="12" fill="#c62828"></rect>
+                <rect x="36" y="12" width="72" height="16" rx="8" fill="#d32f2f"></rect>
+                <circle cx="72" cy="156" r="20" fill="#d32f2f"></circle>
+            </g>
+        </svg>
+    </div>
+
+    <div class="hero-card container">
+        <div class="hero-left fade-up">
+            <h1 id="hero-heading">محمد صلاح</h1>
+            <div class="subtitle" data-i18n="hero.subtitle">مهندس شبكات ونظم | مدير شركة Original Trade</div>
+            <p data-i18n="hero.lead">مع أكثر من 10 سنوات من الخبرة العملية في هندسة الشبكات والحلول التقنية، أقدّم حلولاً شاملة لضمان كفاءة البنية التحتية التقنية والالتزام بأعلى معايير الأداء.</p>
+
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary" data-i18n="btn.consult">احصل على استشارة</a>
+                <a href="#portfolio" class="btn btn-ghost" data-i18n="btn.portfolio">عرض الأعمال</a>
+            </div>
+
+            <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+                <div class="card" style="min-width:140px;text-align:center">
+                    <div style="font-size:22px;font-weight:800;color:var(--fe-red-2)" class="stat-number" data-target="500">0</div>
+                    <div class="stat-label" data-i18n="stats.projects">المشاريع المكتملة</div>
+                </div>
+                <div class="card" style="min-width:140px;text-align:center">
+                    <div style="font-size:22px;font-weight:800;color:var(--fe-red-2)" class="stat-number" data-target="10">0</div>
+                    <div class="stat-label" data-i18n="stats.years">سنوات الخبرة</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right fade-up" aria-hidden="false">
+            <img src="assets/2.png" width="433" height="577" alt="صورة شخصية افتراضية">
+
+        </div>
+    </div>
+
+    <div class="sparks" aria-hidden="true">
+        <span style="--left:8%; --dur:10s; --delay:0s;"></span>
+        <span style="--left:22%; --dur:12s; --delay:2s;"></span>
+        <span style="--left:40%; --dur:9s; --delay:4s;"></span>
+        <span style="--left:55%; --dur:14s; --delay:1s;"></span>
+        <span style="--left:70%; --dur:11s; --delay:3s;"></span>
+        <span style="--left:85%; --dur:13s; --delay:5s;"></span>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="about.title">من أنا</h2>
+            <p data-i18n="about.lead">مكرس لخلق بيئات عمل أكثر كفاءة من خلال حلول تقنية وبنية تحتية للشبكات متقدمة</p>
+        </div>
+
+        <div class="card">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center">
+                <div>
+                    <h3 data-i18n="about.heading">كفاءة أعمالك أولويتي</h3>
+                    <p data-i18n="about.body">كمهندس نظم معتمد ومدير لشركة Original Trade، أعمل على تقييم الاحتياجات التقنية، تصميم وتركيب بنية الشبكات والخوادم، وتطوير خطط الدعم الفني وتدريب الفرق.</p>
+                    <ul>
+                        <li><span data-i18n="skills.fire.title">بنية الشبكات</span> — <span data-i18n="skills.fire.desc">خبير في تصميم البنية التحتية</span></li>
+                        <li><span data-i18n="skills.compliance.title">أمن المعلومات</span> — <span data-i18n="skills.compliance.desc">ضمان الامتثال لمعايير الأمان</span></li>
+                        <li><span data-i18n="skills.emergency.title">إدارة النظم</span> — <span data-i18n="skills.emergency.desc">بروتوكولات دعم فني شاملة</span></li>
+                    </ul>
+                </div>
+                <div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="experience.title">الخبرة</h2>
+            <p data-i18n="experience.lead">رحلتي المهنية في مجال هندسة الشبكات والحلول التقنية</p>
+        </div>
+        <div class="card">
+            <ul class="timeline">
+                <li>
+                    <strong data-i18n="exp.1.title">مدير ومهندس نظم – شركة Original Trade</strong>
+                    <span data-i18n="exp.1.duration">2018 — الآن</span>
+                    <p data-i18n="exp.1.desc">قيادة فرق الدعم الفني وتصميم البنية التحتية للشبكات لعملاء كبار بمدينة العاشر من رمضان.</p>
+                </li>
+                <li>
+                    <strong data-i18n="exp.2.title">مهندس شبكات أول – شركة TechSystems</strong>
+                    <span data-i18n="exp.2.duration">2014 — 2018</span>
+                    <p data-i18n="exp.2.desc">تقديم الاستشارات وتنفيذ حلول الشبكات للشركات والمصانع.</p>
+                </li>
+                <li>
+                    <strong data-i18n="exp.3.title">فني دعم فني – شركة IT Solutions</strong>
+                    <span data-i18n="exp.3.duration">2010 — 2014</span>
+                    <p data-i18n="exp.3.desc">تركيب وصيانة أجهزة الحاسب الآلي والشبكات للعملاء.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="services.title">الخدمات</h2>
+            <p data-i18n="services.lead">حلول شاملة لإدارة البنية التحتية وتقديم الحلول التقنية المتكاملة</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div style="position:relative;">
+                    <div class="service-icon" role="img" aria-hidden="true">🧯</div>
+                    <span class="sr-only" data-i18n="svc.install.iconLabel">أيقونة بنية تحتية</span>
+                </div>
+                <h3 data-i18n="svc.install.title">تصميم البنية التحتية</h3>
+                <p data-i18n="svc.install.desc">تصميم وتركيب الشبكات والخوادم لتغطية كامل احتياجات العمل.</p>
+            </div>
+            <div class="service-card">
+                <div style="position:relative;">
+                    <div class="service-icon" role="img" aria-hidden="true">🔍</div>
+                    <span class="sr-only" data-i18n="svc.inspections.iconLabel">أيقونة الدعم الفني</span>
+                </div>
+                <h3 data-i18n="svc.inspections.title">الدعم الفني والصيانة</h3>
+                <p data-i18n="svc.inspections.desc">عقود صيانة شاملة لضمان استمرارية العمل وتأمين الأنظمة.</p>
+            </div>
+            <div class="service-card">
+                <div style="position:relative;">
+                    <div class="service-icon" role="img" aria-hidden="true">📋</div>
+                    <span class="sr-only" data-i18n="svc.planning.iconLabel">أيقونة الحلول التقنية</span>
+                </div>
+                <h3 data-i18n="svc.planning.title">الحلول التقنية المتكاملة</h3>
+                <p data-i18n="svc.planning.desc">توفير حلول سحابية وتكامل أنظمة مخصص للمنشأة.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <div class="container">
+        <div class="section-title"><h2 data-i18n="portfolio.title">الأعمال</h2><p data-i18n="portfolio.lead">عرض تنفيذات ناجحة لحلول البنية التحتية للشبكات</p></div>
+        <div class="card">
+            <h3 data-i18n="proj.1.title">مجمع مصانع بالعاشر من رمضان</h3>
+            <p data-i18n="proj.1.desc">تصميم وتنفيذ البنية التحتية الكاملة للشبكات والخوادم للمجمع، بما في ذلك حلول الأمن السيبراني.</p>
+        </div>
+    </div>
+</section>
+
+<section id="certifications">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="certifications.title">Professional Certifications</h2>
+            <p data-i18n="certifications.lead">Certified and qualified to the highest industry standards</p>
+        </div>
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <div style="font-size:40px;">🏆</div>
+                <h3 data-i18n="certifications.nfpa.title">Cisco Certified (CCNP)</h3>
+                <p data-i18n="certifications.nfpa.desc">Cisco Certified Network Professional - Enterprise</p>
+            </div>
+            <div class="cert-card">
+                <div style="font-size:40px;">📜</div>
+                <h3 data-i18n="certifications.osha.title">Microsoft Certified (MCSE)</h3>
+                <p data-i18n="certifications.osha.desc">Microsoft Certified: Solutions Expert - Core Infrastructure</p>
+            </div>
+            <div class="cert-card">
+                <div style="font-size:40px;">🎖️</div>
+                <h3 data-i18n="certifications.fire.title">ITIL Foundation</h3>
+                <p data-i18n="certifications.fire.desc">Certified in IT Service Management Best Practices</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="proservices">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="proservices.title">Professional Services</h2>
+            <p data-i18n="proservices.lead">Comprehensive IT infrastructure and network solutions tailored to your needs</p>
+        </div>
+        <div class="prof-services-grid">
+            <div class="prof-service-card">
+                <div class="prof-service-icon">🧯</div>
+                <h3 data-i18n="proservices.install.title">Network Infrastructure Design</h3>
+                <p data-i18n="proservices.install.desc">Expert design and deployment of robust network infrastructures, including LAN/WAN and wireless solutions.</p>
+            </div>
+            <div class="prof-service-card">
+                <div class="prof-service-icon">🔍</div>
+                <h3 data-i18n="proservices.inspection.title">Systems Administration</h3>
+                <p data-i18n="proservices.inspection.desc">Proactive management and administration of servers (Windows/Linux) to ensure optimal performance.</p>
+            </div>
+            <div class="prof-service-card">
+                <div class="prof-service-icon">📋</div>
+                <h3 data-i18n="proservices.emergency.title">IT Technical Support</h3>
+                <p data-i18n="proservices.emergency.desc">On-demand and contractual technical support for end-users and systems at Original Trade.</p>
+            </div>
+            <div class="prof-service-card">
+                <div class="prof-service-icon">🔧</div>
+                <h3 data-i18n="proservices.maintenance.title">Cybersecurity Solutions</h3>
+                <p data-i18n="proservices.maintenance.desc">Implementation of firewalls, endpoint protection, and security protocols to protect data.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="competencies">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="competencies.title">Core Competencies</h2>
+        </div>
+        <div class="competencies-grid">
+            <div class="comp-card">
+                <div class="comp-icon">🔥</div>
+                <div class="comp-content">
+                    <h4 data-i18n="competencies.fire.title">Network Architecture</h4>
+                    <p data-i18n="competencies.fire.desc">Certified expert in network design and optimization.</p>
+                </div>
+            </div>
+            <div class="comp-card">
+                <div class="comp-icon">🔒</div>
+                <div class="comp-content">
+                    <h4 data-i18n="competencies.compliance.title">Cybersecurity</h4>
+                    <p data-i18n="competencies.compliance.desc">Ensuring full compliance with data protection standards.</p>
+                </div>
+            </div>
+            <div class="comp-card">
+                <div class="comp-icon">📋</div>
+                <div class="comp-content">
+                    <h4 data-i18n="competencies.emergency.title">IT Management</h4>
+                    <p data-i18n="competencies.emergency.desc">Managing IT teams and projects at Original Trade.</p>
+                </div>
+            </div>
+            <div class="comp-card">
+                <div class="comp-icon">🔧</div>
+                <div class="comp-content">
+                    <h4 data-i18n="competencies.system.title">Systems Integration</h4>
+                    <p data-i18n="competencies.system.desc">Professional integration of servers, cloud services, and software.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="safety">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="safety.title">IT Standards & Compliance</h2>
+            <p data-i18n="safety.lead">Committed to exceeding industry standards and regulatory requirements</p>
+        </div>
+        <div class="safety-section">
+            <ul>
+                <li>
+                    <strong data-i18n="compliance.nfpa.title">ISO 27001 Compliance</strong>
+                    <p data-i18n="compliance.nfpa.desc">Full adherence to international standards for Information Security Management Systems (ISMS).</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="container">
+        <div class="section-title">
+            <h2 data-i18n="gallery.title">Project Gallery</h2>
+            <p data-i18n="gallery.lead">Showcasing our finished projects</p>
+        </div>
+        <div class="gallery-grid">
+            <img src="assets/img1.jpg" alt="Network Infrastructure Project" data-i18n-alt="gallery.image1.alt">
+            <img src="assets/img2.webp" alt="Structured Cabling Project" data-i18n-alt="gallery.image2.alt">
+            <img src="assets/img3.jpg" alt="Data Center Project" data-i18n-alt="gallery.image3.alt">
+            <img src="assets/img4.webp" alt="Workstation Deployment" data-i18n-alt="gallery.image4.alt">
+            <img src="assets/img5.jpg" alt="Server Room Setup" data-i18n-alt="gallery.image5.alt">
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="section-title"><h2 data-i18n="contact.title">تواصل معنا</h2><p data-i18n="contact.lead">هل أنت مستعد لتحسين البنية التحتية التقنية؟ اتصل للحصول على استشارة</p></div>
+        <div class="card contact-card" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start">
+            <div>
+                <h3 data-i18n="contact.info.title">معلومات التواصل</h3>
+                <p>📧 <a id="contactEmail" href="mailto:ghoniemghoneim2013@gmail.com" style="color:inherit;text-decoration:none">ghoniemghoneim2013@gmail.com</a></p>
+                <p>📱 <a href="tel:+966592961151" style="color:inherit;text-decoration:none">0592961151</a></p>
+                <p>📍 <span data-i18n="contact.location">المكتب: مدينة العاشر من رمضان - (يتم إضافة العنوان التفصيلي هنا)
+                </span></p>
+            </div>
+            <div>
+                <h3 data-i18n="contact.links.title">قنوات التواصل</h3>
+                <p>💬 <a href="https://wa.me/+966592961151" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" data-i18n="contact.whatsapp.label">واتساب</a></p>
+                <p>📩 <a href="https://www.facebook.com/ghnym.abrahym" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" data-i18n="contact.messenger.label">فيس بوك</a></p>
+                <p>📸 <a href="https://www.instagram.com/ghoneim19?igsh=dDI0ODVpZnY1Y2Mz" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" data-i18n="contact.instagram.label">إنستجرام</a></p>
+               </div>
+        </div>
+    </div>
+</section>
+
+<footer style="padding:40px 20px;background:#0b1220;color:#fff">
+    <div class="container">
+        <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+            <div>
+                <strong data-i18n="footer.about">عن Mohamed Salah</strong>
+                <p style="max-width:320px" data-i18n="footer.about.desc">شريكك الموثوق في الحلول التقنية وهندسة الشبكات مع أكثر من 10 سنوات من الخبرة.</p>
+            </div>
+            <div>
+                <strong data-i18n="footer.links">روابط سريعة</strong>
+                <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+                    <a href="#services" style="color:inherit;text-decoration:none" data-i18n="nav.services">الخدمات</a>
+                    <a href="#portfolio" style="color:inherit;text-decoration:none" data-i18n="nav.portfolio">الأعمال</a>
+                    <a href="#contact" style="color:inherit;text-decoration:none" data-i18n="nav.contact">اتصل بنا</a>
+                </div>
+            </div>
+            <div>
+                <strong data-i18n="footer.contact">اتصل</strong>
+                <p>📧 <a href="mailto:ghoniemghoneim2013@gmail.com" style="color:inherit;text-decoration:none">ghoniemghoneim2013@gmail.com</a></p>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:20px;opacity:0.7" data-i18n="footer.copyright">© 2025 Mohamed Salah. جميع الحقوق محفوظة.</div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        // i18n dictionary (complete Arabic translations + English)
+        const i18n = {
+            en: {
+                'brand.name':'Mohamed Salah',
+                'nav.home':'Home','nav.about':'About','nav.experience':'Experience','nav.services':'Services','nav.portfolio':'Portfolio','nav.contact':'Contact',
+                'hero.subtitle':'Network & Systems Engineer | Manager, Original Trade','hero.lead':'With over 10 years of hands-on experience in network engineering and IT solutions, I deliver comprehensive solutions to optimize technical infrastructure and ensure high performance.','btn.consult':'Get Consultation','btn.portfolio':'View Portfolio',
+                'stats.projects':'Projects Completed','stats.years':'Years Experience',
+                'about.title':'About Me','about.lead':'Dedicated to creating more efficient work environments through expert IT solutions and network infrastructure.','about.heading':'Your Business Efficiency Is My Priority',
+                'skills.fire.title':'Network Architecture','skills.fire.desc':'Expert in infrastructure design', 'skills.compliance.title':'Cybersecurity','skills.emergency.title':'Systems Management','skills.emergency.desc':'Comprehensive technical support protocols',
+                'services.title':'Services','services.lead':'Comprehensive IT infrastructure and network solutions',
+                'svc.install.title':'Infrastructure Design','svc.install.desc':'Professional design and deployment of networks and servers.','svc.inspections.title':'Technical Support','svc.planning.title':'Integrated IT Solutions',
+                'svc.inspections.desc':'Comprehensive support contracts to ensure uptime and security.',
+                'svc.planning.desc':'Custom cloud and integration solutions for your facility.',
+                'skills.compliance.desc':'Ensuring compliance with data security standards',
+                'svc.install.iconLabel':'Infrastructure icon','svc.inspections.iconLabel':'Support icon','svc.planning.iconLabel':'Solutions icon',
+                'experience.title':'Experience','experience.lead':'My professional journey in network engineering and IT solutions',
+                'exp.1.title':'Manager & Systems Engineer – Original Trade','exp.1.duration':'2018 — Present','exp.1.desc':'Leading technical support and network infrastructure design for major clients in 10th of Ramadan City.',
+                'exp.2.title':'Senior Network Engineer – TechSystems','exp.2.duration':'2014 — 2018','exp.2.desc':'Providing consultancy and network implementation for corporate and industrial clients.',
+                'exp.3.title':'IT Support Technician – IT Solutions','exp.3.duration':'2010 — 2014','exp.3.desc':'Installing and maintaining computer hardware and networks for clients.',
+                'hero.profile.alt':'Profile photo placeholder','hero.field.alt':'Field photo placeholder',
+                'portfolio.title':'Portfolio','portfolio.lead':'Showcasing successful IT infrastructure implementations','proj.1.title':'Industrial Complex (10th of Ramadan)','proj.1.desc':'Designed and deployed the complete network and server infrastructure for the complex, including cybersecurity solutions.',
+                'contact.title':'Get In Touch','contact.lead':'Ready to improve your facility\'s IT infrastructure? Contact for consultation',
+                'contact.info.title':'Contact Information',
+                'contact.name.label':'Your Name','contact.name.placeholder':'Name',
+                'contact.email.label':'Email','contact.email.placeholder':'example@mail.com',
+                'contact.message.label':'Message','contact.message.placeholder':'Your message',
+                'contact.submit':'Send',
+                // new labels for contact link titles and platforms
+                'contact.links.title':'Social & Messaging',
+                'contact.whatsapp.label':'WhatsApp',
+                'contact.messenger.label':'Messenger',
+                'contact.instagram.label':'Instagram',
+                'contact.linkedin.label':'LinkedIn'
+                ,
+                // additional translations for about description and placeholders
+                'about.body':'As a certified systems engineer and Manager at Original Trade, I assess technical needs, design and install network and server infrastructures, and develop support plans and hands-on training for teams.',
+                'hero.photo.text':'Image here',
+                'hero.field.text':'Field image',
+                'placeholder.chart':'Add a photo or diagram here',
+                'placeholder.chart.alt':'Empty space to add an image or diagram',
+                'contact.location':'Office: 10th of Ramadan City, (Detailed Address Here)',
+                // Certifications
+                'certifications.title':'Professional Certifications',
+                'certifications.lead':'Certified and qualified to the highest industry standards',
+                'certifications.nfpa.title':'Cisco Certified (CCNP)',
+                'certifications.nfpa.desc':'Cisco Certified Network Professional - Enterprise',
+                'certifications.osha.title':'Microsoft Certified (MCSE)',
+                'certifications.osha.desc':'Microsoft Certified: Solutions Expert - Core Infrastructure',
+                'certifications.fire.title':'ITIL Foundation',
+                'certifications.fire.desc':'Certified in IT Service Management Best Practices',
+                // Professional Services
+                'proservices.title':'Professional Services',
+                'proservices.lead':'Comprehensive IT infrastructure and network solutions tailored to your needs',
+                'proservices.install.title':'Network Infrastructure Design',
+                'proservices.install.desc':'Expert design and deployment of robust network infrastructures, including LAN/WAN and wireless solutions.',
+                'proservices.inspection.title':'Systems Administration',
+                'proservices.inspection.desc':'Proactive management and administration of servers (Windows/Linux) to ensure optimal performance.',
+                'proservices.emergency.title':'IT Technical Support',
+                'proservices.emergency.desc':'On-demand and contractual technical support for end-users and systems at Original Trade.',
+                'proservices.maintenance.title':'Cybersecurity Solutions',
+                'proservices.maintenance.desc':'Implementation of firewalls, endpoint protection, and security protocols to protect data.',
+                // Core Competencies
+                'competencies.title':'Core Competencies',
+                'competencies.fire.title':'Network Architecture',
+                'competencies.fire.desc':'Certified expert in network design and optimization.',
+                'competencies.compliance.title':'Cybersecurity',
+                'competencies.compliance.desc':'Ensuring full compliance with data protection standards.',
+                'competencies.emergency.title':'IT Management',
+                'competencies.emergency.desc':'Managing IT teams and projects at Original Trade.',
+                'competencies.system.title':'Systems Integration',
+                'competencies.system.desc':'Professional integration of servers, cloud services, and software.',
+                // Client Testimonials
+                'testimonials.title':'Client Testimonials',
+                'testimonials.lead':'What our clients say about our services',
+                'testimonials.quote1':'John\'s expertise in fire safety is unmatched.',
+                'testimonials.author1':'MJ',
+                'testimonials.author1.name':'Michael Johnson',
+                'testimonials.author1.role':'Facility Manager, TechCorp Industries',
+                // Safety Standards & Compliance
+                'safety.title':'IT Standards & Compliance',
+                'safety.lead':'Committed to exceeding industry standards and regulatory requirements',
+                'compliance.nfpa.title':'ISO 27001 Compliance',
+                'compliance.nfpa.desc':'Full adherence to international standards for Information Security Management Systems (ISMS).',
+                // Gallery
+                'gallery.title':'Project Gallery',
+                'gallery.lead':'Showcasing our finished projects',
+                'gallery.image1.alt':'Network server room installation project 1',
+                'gallery.image2.alt':'Structured cabling project 2',
+                'gallery.image3.alt':'Data center setup project 3',
+                'gallery.image4.alt':'Workstation deployment project 4',
+                'gallery.image5.alt':'Network switch configuration project 5',
+                // Footer translations (English)
+                'footer.about':'About Mohamed Salah',
+                'footer.about.desc':'Your trusted partner in IT solutions and network engineering with over 10 years of experience.',
+                'footer.links':'Quick Links',
+                'footer.contact':'Contact',
+                'footer.copyright':'© 2025 Mohamed Salah. All rights reserved.'
+            },
+            ar: {
+                'brand.name':'محمد صلاح',
+                'nav.home':'الرئيسية','nav.about':'عني','nav.experience':'الخبرة','nav.services':'الخدمات','nav.portfolio':'الأعمال','nav.contact':'اتصل بنا',
+                'hero.subtitle':'مهندس شبكات ونظم | مدير شركة Original Trade',
+                'hero.lead':'مع أكثر من 10 سنوات من الخبرة العملية في هندسة الشبكات والحلول التقنية، أقدّم حلولاً شاملة لضمان كفاءة البنية التحتية التقنية والالتزام بأعلى معايير الأداء.',
+                'btn.consult':'احصل على استشارة','btn.portfolio':'عرض الأعمال',
+                'stats.projects':'المشاريع المكتملة','stats.years':'سنوات الخبرة',
+                'about.title':'من أنا','about.lead':'مكرس لخلق بيئات عمل أكثر كفاءة من خلال حلول تقنية وبنية تحتية للشبكات متقدمة','about.heading':'كفاءة أعمالك أولويتي',
+                'skills.fire.title':'بنية الشبكات','skills.fire.desc':'خبير في تصميم البنية التحتية','skills.compliance.title':'أمن المعلومات','skills.emergency.title':'إدارة النظم','skills.emergency.desc':'بروتوكولات دعم فني شاملة',
+                'services.title':'الخدمات','services.lead':'حلول شاملة لإدارة البنية التحتية وتقديم الحلول التقنية المتكاملة',
+                'svc.install.title':'تصميم البنية التحتية','svc.install.desc':'تصميم وتركيب الشبكات والخوادم لتغطية كامل احتياجات العمل.','svc.inspections.title':'الدعم الفني والصيانة','svc.planning.title':'الحلول التقنية المتكاملة',
+                'svc.inspections.desc':'عقود صيانة شاملة لضمان استمرارية العمل وتأمين الأنظمة.','svc.planning.desc':'توفير حلول سحابية وتكامل أنظمة مخصص للمنشأة.',
+                'skills.compliance.desc':'ضمان الامتثال لمعايير الأمان',
+                'svc.install.iconLabel':'أيقونة بنية تحتية','svc.inspections.iconLabel':'أيقونة الدعم الفني','svc.planning.iconLabel':'أيقونة الحلول التقنية',
+                'experience.title':'الخبرة','experience.lead':'رحلتي المهنية في مجال هندسة الشبكات والحلول التقنية',
+                'exp.1.title':'مدير ومهندس نظم – شركة Original Trade','exp.1.duration':'2018 — الآن','exp.1.desc':'قيادة فرق الدعم الفني وتصميم البنية التحتية للشبكات لعملاء كبار بمدينة العاشر من رمضان.',
+                'exp.2.title':'مهندس شبكات أول – شركة TechSystems','exp.2.duration':'2014 — 2018','exp.2.desc':'تقديم الاستشارات وتنفيذ حلول الشبكات للشركات والمصانع.',
+                'exp.3.title':'فني دعم فني – شركة IT Solutions','exp.3.duration':'2010 — 2014','exp.3.desc':'تركيب وصيانة أجهزة الحاسب الآلي والشبكات للعملاء.',
+                'hero.profile.alt':'صورة شخصية افتراضية','hero.field.alt':'صورة للميدان',
+                'portfolio.title':'الأعمال','portfolio.lead':'عرض تنفيذات ناجحة لحلول البنية التحتية للشبكات','proj.1.title':'مجمع مصانع بالعاشر من رمضان','proj.1.desc':'تصميم وتنفيذ البنية التحتية الكاملة للشبكات والخوادم للمجمع، بما في ذلك حلول الأمن السيبراني.',
+                'contact.title':'تواصل معنا','contact.lead':'هل أنت مستعد لتحسين البنية التحتية التقنية؟ اتصل للحصول على استشارة',
+                'contact.info.title':'معلومات التواصل',
+                'contact.name.label':'اسمك','contact.name.placeholder':'الاسم',
+                'contact.email.label':'البريد الإلكتروني','contact.email.placeholder':'example@mail.com',
+                'contact.message.label':'الرسالة','contact.message.placeholder':'رسالتك',
+                'contact.submit':'أرسل',
+                // new labels for contact link titles and platforms (Arabic)
+                'contact.links.title':'قنوات التواصل',
+                'contact.whatsapp.label':'واتساب',
+                'contact.messenger.label':'ماسنجر',
+                'contact.instagram.label':'إنستجرام',
+                'contact.linkedin.label':'لينكدإن'
+                ,
+                // additional translations for about description and placeholders (Arabic)
+                'about.body':'كمهندس نظم معتمد ومدير لشركة Original Trade، أعمل على تقييم الاحتياجات التقنية، تصميم وتركيب بنية الشبكات والخوادم، وتطوير خطط الدعم الفني وتدريب الفرق.',
+                'hero.photo.text':'صورة هنا',
+                'hero.field.text':'صورة للميدان',
+                'placeholder.chart':'أضف صورة أو مخطط هنا',
+                'placeholder.chart.alt':'مساحة فارغة لإضافة صورة أو مخطط',
+                'contact.location':'المكتب: مدينة العاشر من رمضان - (يتم إضافة العنوان التفصيلي هنا)' ,
+                // Certifications
+                'certifications.title':'الشهادات المهنية',
+                'certifications.lead':'معتمد ومؤهل وفق أعلى معايير الصناعة',
+                'certifications.nfpa.title':'شهادة سيسكو (CCNP)',
+                'certifications.nfpa.desc':'شهادة محترف شبكات معتمد من سيسكو - Enterprise',
+                'certifications.osha.title':'شهادة مايكروسوفت (MCSE)',
+                'certifications.osha.desc':'خبير حلول معتمد من مايكروسوفت - البنية التحتية الأساسية',
+                'certifications.fire.title':'شهادة ITIL Foundation',
+                'certifications.fire.desc':'شهادة معتمدة في أفضل ممارسات إدارة خدمات تقنية المعلومات',
+                // Professional Services
+                'proservices.title':'الخدمات المهنية',
+                'proservices.lead':'حلول شاملة للبنية التحتية التقنية والشبكات مصممة حسب احتياجاتك',
+                'proservices.install.title':'تصميم البنية التحتية للشبكات',
+                'proservices.install.desc':'تصميم ونشر احترافي للبنى التحتية للشبكات، بما في ذلك الشبكات المحلية والواسعة واللاسلكية.',
+                'proservices.inspection.title':'إدارة الأنظمة',
+                'proservices.inspection.desc':'إدارة استباقية للخوادم (Windows/Linux) لضمان الأداء الأمثل.',
+                'proservices.emergency.title':'الدعم الفني التقني',
+                'proservices.emergency.desc':'دعم فني فوري وتعاقدي للمستخدمين والأنظمة في Original Trade.',
+                'proservices.maintenance.title':'حلول الأمن السيبراني',
+                'proservices.maintenance.desc':'تطبيق جدران الحماية، حماية نقاط النهاية، وبروتوكولات الأمان لحماية البيانات.',
+                // Core Competencies
+                'competencies.title':'مجالات التميز',
+                'competencies.fire.title':'بنية الشبكات',
+                'competencies.fire.desc':'خبير معتمد في تصميم وتحسين الشبكات.',
+                'competencies.compliance.title':'الأمن السيبراني',
+                'competencies.compliance.desc':'ضمان الامتثال الكامل لمعايير حماية البيانات.',
+                'competencies.emergency.title':'إدارة تقنية المعلومات',
+                'competencies.emergency.desc':'إدارة فرق ومشاريع تقنية المعلومات في Original Trade.',
+                'competencies.system.title':'تكامل الأنظمة',
+                'competencies.system.desc':'تكامل احترافي للخوادم والخدمات السحابية والبرمجيات.',
+                // Client Testimonials
+                'testimonials.title':'آراء العملاء',
+                'testimonials.lead':'ماذا يقول عملاؤنا عن خدماتنا',
+                'testimonials.quote1':'خبرة جون في سلامة الحريق لا مثيل لها.',
+                'testimonials.author1':'MJ',
+                'testimonials.author1.name':'مايكل جونسون',
+                'testimonials.author1.role':'مدير المنشأة، شركة TechCorp Industries',
+                // Safety Standards & Compliance
+                'safety.title':'معايير تقنية المعلومات والامتثال',
+                'safety.lead':'ملتزمون بتجاوز معايير الصناعة والمتطلبات التنظيمية',
+                'compliance.nfpa.title':'الامتثال لمعايير ISO 27001',
+                'compliance.nfpa.desc':'التقيد الكامل بالمعايير الدولية لأنظمة إدارة أمن المعلومات (ISMS).',
+                // Gallery
+                'gallery.title':'معرض المشاريع',
+                'gallery.lead':'عرض مشاريعنا المنجزة',
+                'gallery.image1.alt':'مشروع تركيب غرفة خوادم شبكات 1',
+                'gallery.image2.alt':'مشروع تمديد كابلات منظم 2',
+                'gallery.image3.alt':'مشروع إعداد مركز بيانات 3',
+                'gallery.image4.alt':'مشروع تجهيز محطات عمل 4',
+                'gallery.image5.alt':'مشروع إعداد سويتشات شبكة 5',
+                // Footer translations (Arabic)
+                'footer.about':'عن Mohamed Salah',
+                'footer.about.desc':'شريكك الموثوق في الحلول التقنية وهندسة الشبكات مع أكثر من 10 سنوات من الخبرة.',
+                'footer.links':'روابط سريعة',
+                'footer.contact':'اتصل',
+                'footer.copyright':'© 2025 Mohamed Salah. جميع الحقوق محفوظة.'
+            }
+        };
+
+        // apply translations
+        function apply(lang){
+            document.documentElement.lang = (lang==='ar')? 'ar' : 'en';
+            document.querySelectorAll('[data-i18n]').forEach(el=>{
+                const key = el.getAttribute('data-i18n');
+                if(i18n[lang] && i18n[lang][key]) el.innerText = i18n[lang][key];
+            });
+            // some other nodes
+            const heroH = document.getElementById('hero-heading'); if(heroH && lang==='ar') heroH.innerText = 'محمد صلاح'; if(heroH && lang!=='ar') heroH.innerText = 'Mohamed Salah';
+            // update aria-label attributes for elements with data-i18n-aria-label
+            document.querySelectorAll('[data-i18n-aria-label]').forEach(el=>{
+                const key = el.getAttribute('data-i18n-aria-label');
+                if(i18n[lang] && i18n[lang][key]){
+                    el.setAttribute('aria-label', i18n[lang][key]);
+                }
+            });
+            // update placeholder attributes for elements with data-i18n-placeholder
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+                const key = el.getAttribute('data-i18n-placeholder');
+                if(i18n[lang] && i18n[lang][key]){
+                    el.setAttribute('placeholder', i18n[lang][key]);
+                }
+            });
+            // update alt attributes for images with data-i18n-alt
+            document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+                const key = el.getAttribute('data-i18n-alt');
+                if(i18n[lang] && i18n[lang][key]){
+                    el.setAttribute('alt', i18n[lang][key]);
+                }
+            });
+            // update contact placeholders if needed
+        }
+
+        // toggles
+        const langToggle = document.getElementById('langToggle');
+        const themeToggle = document.getElementById('themeToggle');
+        // default to Arabic UI for this release
+        let currentLang = localStorage.getItem('preferredLang') || 'ar';
+        apply(currentLang);
+        langToggle.innerText = (currentLang==='ar')? 'العربية' : 'EN';
+        langToggle.addEventListener('click', ()=>{
+            currentLang = (currentLang==='ar')? 'en' : 'ar';
+            localStorage.setItem('preferredLang', currentLang);
+            apply(currentLang);
+            langToggle.innerText = (currentLang==='ar')? 'العربية' : 'EN';
+        });
+
+        // theme toggle — swap between light and dark by toggling a CSS class on <body>.
+        let currentTheme = localStorage.getItem('preferredTheme') || 'light';
+        function applyTheme(t){
+            if(t === 'dark'){
+                document.body.classList.add('dark');
+                themeToggle.innerText = '☀️';
+            }else{
+                document.body.classList.remove('dark');
+                themeToggle.innerText = '🌙';
+            }
+            localStorage.setItem('preferredTheme', t);
+        }
+        // initialise theme based on persisted preference
+        applyTheme(currentTheme);
+        themeToggle.addEventListener('click', ()=>{
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            applyTheme(currentTheme);
+        });
+
+        // mobile menu toggle: show/hide nav links on small screens
+        const menuToggleBtn = document.getElementById('menuToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if(menuToggleBtn && navMenu){
+            menuToggleBtn.addEventListener('click', ()=>{
+                navMenu.classList.toggle('open');
+            });
+        }
+
+        // counters
+        document.querySelectorAll('.stat-number').forEach(el=>{
+            const target = +el.getAttribute('data-target') || 0; let cur=0; const step = Math.max(1, Math.floor(target/80));
+            const t = setInterval(()=>{ cur += step; el.innerText = Math.min(cur,target); if(cur>=target) clearInterval(t); },12);
+        });
+
+        // contact form simple validation
+        const form = document.getElementById('contactForm');
+        form && form.addEventListener('submit', e=>{
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim(); const email = document.getElementById('email').value.trim(); const msg = document.getElementById('message').value.trim();
+            if(!name || !email || !msg){ alert((document.documentElement.lang==='ar')? 'الرجاء ملء الحقول المطلوبة' : 'Please fill required fields'); return; }
+            alert((document.documentElement.lang==='ar')? 'تم إرسال الرسالة! (تجريبي)' : 'Message sent! (demo)');
+            form.reset();
+        });
+
+    });
+</script>
+
+</body>
+</html>
